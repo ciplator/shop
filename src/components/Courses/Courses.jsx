@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseCard from './CourseCard';
+import CourseCard from '../CursesCard/CourseCard';
 
 const courses = [
   { id: 1, title: 'Базовый английский', level: 'A1-A2', price: '2999', duration: '3 месяца' },
