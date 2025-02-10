@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
-import Features from './components/Features/Features';
-import Courses from './components/Courses/Courses';
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
+import { CourseCard } from "./components/Courses/CourseCard";
 
 const App = () => {
-  const [selectedCourse, setSelectedCourse] = useState(null);
+  const course = { title: "React", level: "Начальный", duration: "8 недель", price: "1500" };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      <HeroSection />
-      <Features />
-      <Courses onSelect={setSelectedCourse} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <CourseCard course={course} onSelect={() => console.log("Выбрано")} />
+      </div>
+    </ThemeProvider>
   );
 };
 
