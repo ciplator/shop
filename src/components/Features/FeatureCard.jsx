@@ -1,9 +1,11 @@
+// src/components/Features/FeatureCard.jsx
 import styled from 'styled-components';
-import { Card } from "@/components/ui/card";
 
-const FeatureCardWrapper = styled(Card)`
+const FeatureCardWrapper = styled.div`
   padding: 1.5rem;
-  text-align: center;
+  background: ${props => props.theme.colors.white};
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const FeatureIcon = styled.div`

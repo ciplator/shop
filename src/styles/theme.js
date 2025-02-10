@@ -1,11 +1,11 @@
 export const theme = {
   colors: {
-    primary: '#2563eb',
-    white: '#ffffff',
+    primary: "#4CAF50", // Зеленый
+    primaryDark: "#388E3C", // Темный зеленый
+    white: "#FFFFFF",
     gray: {
-      50: '#f9fafb',
-      600: '#4b5563',
-      900: '#111827'
-    }
-  }
+      50: "#F9FAFB",
+      600: "#4B5563",
+    },
+  },
 };

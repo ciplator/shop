@@ -1,16 +1,23 @@
+import React from "react";
 import styled from "styled-components";
 
-export const Button = styled.button`
-  background-color: ${props => props.theme.colors.primary};
+const ButtonStyled = styled.button`
+  background: ${props => props.theme.colors.primary};
   color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
   width: ${props => (props.fullWidth ? "100%" : "auto")};
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
 
   &:hover {
-    background-color: ${props => props.theme.colors.primaryHover || "#1e40af"};
+    background: ${props => props.theme.colors.primaryDark};
   }
 `;
+
+export const Button = ({ children, onClick, fullWidth }) => (
+  <ButtonStyled onClick={onClick} fullWidth={fullWidth}>
+    {children}
+  </ButtonStyled>
+);

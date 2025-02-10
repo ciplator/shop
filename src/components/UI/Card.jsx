@@ -1,26 +1,25 @@
-import styled from "styled-components";
+// src/components/UI/Card.jsx
+import styled from 'styled-components';
 
 export const Card = styled.div`
-  background: white;
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   padding: 1.5rem;
-  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const CardHeader = styled.div`
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 `;
 
 export const CardTitle = styled.h3`
-  margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 `;
 
 export const CardContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-grow: 1;
 `;

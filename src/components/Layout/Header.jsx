@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Button } from '../UI/Button';
+import styled from "styled-components";
+import { Button } from "../UI/Button";
 
 const HeaderWrapper = styled.header`
   background: ${props => props.theme.colors.white};

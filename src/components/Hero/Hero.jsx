@@ -1,3 +1,4 @@
+// src/components/Hero/Hero.jsx
 import styled from 'styled-components';
 import { Button } from '../UI/Button';
 
@@ -5,7 +6,6 @@ const HeroSection = styled.div`
   background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   padding: 4rem 1rem;
-  text-align: center;
 `;
 
 const HeroContent = styled.div`
@@ -24,13 +24,14 @@ const HeroSubtitle = styled.p`
   margin-bottom: 2rem;
 `;
 
-export const Hero = () => (
+const Hero = () => (
   <HeroSection>
     <HeroContent>
       <HeroTitle>Изучайте английский онлайн</HeroTitle>
       <HeroSubtitle>Индивидуальные занятия с носителями языка</HeroSubtitle>
-      <Button>Попробовать бесплатно</Button>
+      <Button white>Попробовать бесплатно</Button>
     </HeroContent>
   </HeroSection>
 );
 
+export default Hero;  // Экспортируем как default

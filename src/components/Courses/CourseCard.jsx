@@ -1,6 +1,7 @@
+// src/components/Courses/CourseCard.jsx
 import styled from 'styled-components';
-import { Card, CardHeader, CardTitle, CardContent } from "../UI/Card";
 import { Button } from '../UI/Button';
+import { Card, CardHeader, CardTitle, CardContent } from '../UI/Card';
 
 const CourseCardWrapper = styled(Card)`
   transition: box-shadow 0.2s;
@@ -23,7 +24,7 @@ const CourseValue = styled.span`
   font-weight: 600;
 `;
 
-export const CourseCard = ({ course, onSelect }) => (
+export const CourseCard = ({ course }) => (
   <CourseCardWrapper>
     <CardHeader>
       <CardTitle>{course.title}</CardTitle>
@@ -41,9 +42,7 @@ export const CourseCard = ({ course, onSelect }) => (
         <CourseLabel>Цена:</CourseLabel>
         <CourseValue>{course.price} ₽/мес</CourseValue>
       </CourseInfo>
-      <Button fullWidth onClick={() => onSelect(course)}>
-        Записаться
-      </Button>
+      <Button fullWidth>Записаться</Button>
     </CardContent>
   </CourseCardWrapper>
 );
