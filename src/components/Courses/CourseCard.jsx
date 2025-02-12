@@ -18,7 +18,7 @@ export const CourseCard = ({ course }) => (
       </CourseInfo>
       <CourseInfo>
         <CourseLabel>Цена:</CourseLabel>
-        <CourseValue>{course.price} ₽/мес</CourseValue>
+        <CourseValue>{course.price} $/мес</CourseValue>
       </CourseInfo>
       <Button fullWidth>Записаться</Button>
     </CardContent>
