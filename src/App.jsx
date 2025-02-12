@@ -1,17 +1,17 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/theme';
-import { Header } from './components/Layout/Header';
-import Hero from './components/Hero/Hero';
-import { FeatureCard } from './components/Features/FeatureCard';
-import { CourseCard } from './components/Courses/CourseCard';
-import { GraduationCap, Calendar, MessageCircle } from 'lucide-react';
-import { AppWrapper, Section, Grid } from './App.styles';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
+import { Header } from "./components/Layout/Header";
+import Hero from "./components/Hero/Hero";
+import { FeatureCard } from "./components/Features/FeatureCard";
+import { CourseCard } from "./components/Courses/CourseCard";
+import { GraduationCap, Calendar, MessageCircle } from "lucide-react";
+import { AppWrapper, Section, Grid } from "./App.styles";
 
 const App = () => {
   const courses = [
-    { id: 1, title: "Основы английского", level: "Beginner", duration: "2 месяца", price: "1200" },
-    { id: 2, title: "Продвинутый английский", level: "Advanced", duration: "3 месяца", price: "1500" }
+    { id: 1, title: "Основы английского", level: "Beginner", duration: "2 месяца", price: "50" },
+    { id: 2, title: "Продвинутый английский", level: "Advanced", duration: "3 месяца", price: "75" }
   ];
 
   return (
@@ -19,7 +19,6 @@ const App = () => {
       <AppWrapper>
         <Header />
         <Hero />
-
         <Section>
           <Grid>
             <FeatureCard
@@ -39,10 +38,9 @@ const App = () => {
             />
           </Grid>
         </Section>
-
         <Section>
           <Grid>
-            {courses.map((course) => (
+            {courses.map(course => (
               <CourseCard key={course.id} course={course} />
             ))}
           </Grid>

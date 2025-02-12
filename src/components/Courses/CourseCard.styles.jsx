@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Card } from '../UI/Card';
+import styled from "styled-components";
+import { Card } from "../UI/Card";
 
 export const CourseCardWrapper = styled(Card)`
   transition: box-shadow 0.2s;
@@ -15,7 +15,7 @@ export const CourseInfo = styled.div`
 `;
 
 export const CourseLabel = styled.span`
-  color: ${props => props.theme.colors.gray[600]};
+  color: ${(props) => props.theme.colors.gray[600]};
   font-size: 14px;
 `;
 

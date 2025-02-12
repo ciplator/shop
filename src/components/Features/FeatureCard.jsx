@@ -1,4 +1,4 @@
-import { FeatureCardWrapper, FeatureIcon, FeatureTitle, FeatureDescription } from './FeatureCard.styles';
+import { FeatureCardWrapper, FeatureIcon, FeatureTitle, FeatureDescription } from "./FeatureCard.styles";
 
 export const FeatureCard = ({ icon: Icon, title, description }) => (
   <FeatureCardWrapper>

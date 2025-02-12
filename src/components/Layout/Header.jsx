@@ -1,5 +1,5 @@
-import { HeaderWrapper, HeaderContent, Logo, Nav } from './Header.styles';
-import { Button } from '../UI/Button';
+import { Button } from "../UI/Button";
+import { HeaderWrapper, HeaderContent, Logo, Nav } from "./Header.styles";
 
 export const Header = () => (
   <HeaderWrapper>
