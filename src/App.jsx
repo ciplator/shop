@@ -1,6 +1,7 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./styles/theme";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { useTheme } from "./context/ThemeContext";
+import { darkTheme, lightTheme } from "./styles/theme";
 import { Header } from "./components/Layout/Header";
 import Hero from "./components/Hero/Hero";
 import { FeatureCard } from "./components/Features/FeatureCard";
@@ -9,15 +10,18 @@ import { GraduationCap, Calendar, MessageCircle } from "lucide-react";
 import { AppWrapper, Section, Grid } from "./App.styles";
 
 const App = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
+  const currentTheme = isDarkMode ? darkTheme : lightTheme;
+
   const courses = [
     { id: 1, title: "Основы английского", level: "Beginner", duration: "2 месяца", price: "50" },
     { id: 2, title: "Продвинутый английский", level: "Advanced", duration: "3 месяца", price: "75" }
   ];
 
   return (
-    <ThemeProvider theme={theme}>
+    <StyledThemeProvider theme={currentTheme}>
       <AppWrapper>
-        <Header />
+        <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <Hero />
         <Section>
           <Grid>
@@ -46,7 +50,7 @@ const App = () => {
           </Grid>
         </Section>
       </AppWrapper>
-    </ThemeProvider>
+    </StyledThemeProvider>
   );
 };
 

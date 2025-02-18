@@ -1,6 +1,16 @@
-/* Добавьте стили для вашего приложения */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s; /* Для плавного перехода между темами */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }
