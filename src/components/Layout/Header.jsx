@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSun, FaMoon } from "react-icons/fa"; // Импортируем иконки
+import ToggleMenu from "../ToggleMenu";
 import { Button } from "../UI/Button";
 import { HeaderWrapper, HeaderContent, Logo, Nav } from "./Header.styles";
 
@@ -11,9 +11,7 @@ export const Header = ({ toggleTheme, isDarkMode }) => (
         <Button variant="ghost">Курсы</Button>
         <Button variant="ghost">Преподаватели</Button>
         <Button variant="ghost">Контакты</Button>
-        <Button onClick={toggleTheme}>
-          {isDarkMode ? <FaMoon size={20} /> : <FaSun size={20} />}
-        </Button>
+        <ToggleMenu toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
       </Nav>
     </HeaderContent>
   </HeaderWrapper>

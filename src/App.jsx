@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useTheme } from "./context/ThemeContext";
 import { darkTheme, lightTheme } from "./styles/theme";
@@ -18,10 +18,12 @@ const App = () => {
     { id: 2, title: "Продвинутый английский", level: "Advanced", duration: "3 месяца", price: "75" }
   ];
 
+  const memoizedToggleTheme = useCallback(() => toggleTheme(), [toggleTheme]);
+
   return (
     <StyledThemeProvider theme={currentTheme}>
       <AppWrapper>
-        <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+        <Header toggleTheme={memoizedToggleTheme} isDarkMode={isDarkMode} />
         <Hero />
         <Section>
           <Grid>

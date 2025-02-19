@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "../UI/Button";
 import { HeroSection, HeroContent, HeroTitle, HeroSubtitle } from "./Hero.styles";
 
