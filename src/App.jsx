@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useTheme } from "./context/ThemeContext";
 import { darkTheme, lightTheme } from "./styles/theme";
@@ -8,10 +8,13 @@ import { FeatureCard } from "./components/Features/FeatureCard";
 import { CourseCard } from "./components/Courses/CourseCard";
 import { GraduationCap, Calendar, MessageCircle } from "lucide-react";
 import { AppWrapper, Section, Grid } from "./App.styles";
+import Modal from "./components/Modal";
 
 const App = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const currentTheme = isDarkMode ? darkTheme : lightTheme;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const courses = [
     { id: 1, title: "Основы английского", level: "Beginner", duration: "2 месяца", price: "50" },
@@ -19,6 +22,10 @@ const App = () => {
   ];
 
   const memoizedToggleTheme = useCallback(() => toggleTheme(), [toggleTheme]);
+
+  const toggleModal = () => {
+    setIsModalOpen((prevState) => !prevState);
+  };
 
   return (
     <StyledThemeProvider theme={currentTheme}>
@@ -51,6 +58,17 @@ const App = () => {
             ))}
           </Grid>
         </Section>
+        <Modal isOpen={isModalOpen} onClose={toggleModal}>
+          <h2>О нас</h2>
+          <p>
+            Мы предлагаем курсы английского языка для всех уровней: от начинающих до продвинутых.
+          </p>
+          <p>
+            Наши преподаватели — носители языка с большим опытом преподавания.
+          </p>
+        </Modal>
+
+        <button onClick={toggleModal}>Узнать больше</button>
       </AppWrapper>
     </StyledThemeProvider>
   );
