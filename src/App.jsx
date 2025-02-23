@@ -3,6 +3,7 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { useTheme } from "./context/ThemeContext";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { Header } from "./components/Layout/Header";
+import { Footer } from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import { FeatureCard } from "./components/Features/FeatureCard";
 import { CourseCard } from "./components/Courses/CourseCard";
@@ -67,8 +68,7 @@ const App = () => {
             Наши преподаватели — носители языка с большим опытом преподавания.
           </p>
         </Modal>
-
-        <button onClick={toggleModal}>Узнать больше</button>
+        <Footer />
       </AppWrapper>
     </StyledThemeProvider>
   );
